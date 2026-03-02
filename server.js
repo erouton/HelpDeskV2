@@ -1,15 +1,20 @@
 import express from "express";
+import morgan from "morgan";
 
 const app = express();
 const PORT = 8080;
 
 app.use(express.json());
-app.use(express.static("./")); // serve from project root
+
+// HTTP request logging
+app.use(morgan("dev"));
+
+app.use(express.static("./"));
 
 app.get("/", (req, res) => {
     res.sendFile("index.html", { root: "./" });
 });
 
 app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://0.0.0.0:${PORT}`);
+    console.log(`Server running on http://192.168.50.73:${PORT}`);
 });
