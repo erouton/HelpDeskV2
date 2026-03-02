@@ -5,6 +5,8 @@
     padding: 20px 16px 20px 16px;
     background-color: #133e5e;
     border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .ticket-card {
@@ -20,7 +22,7 @@
 }
 
 .ticket-title {
-    font-size: 1.7rem;
+    font-size: clamp(1rem, 2vw, 1.7rem);
     font-weight: bold;
     margin: 0 0 10px;
     color: white;
@@ -28,7 +30,7 @@
 
 .no-tickets {
     color: white;
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     padding: 20px 16px 20px 16px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.1);
@@ -87,4 +89,18 @@
 
 .ticket-card p[data-priority="high"] {
     color: red;
+}
+
+#ticket-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#ticket-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+#ticket-container::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 8px;
 }
