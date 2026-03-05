@@ -29,7 +29,7 @@ export function initTicketForm() {
             const ticketPriority = document.querySelector("#ticket-priority").value;
 
             try {
-                const response = await fetch("/ticket", {
+                const response = await fetch("/createTicket", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

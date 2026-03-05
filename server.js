@@ -34,7 +34,7 @@ app.post("/login", (req, res) => {
     }
 });
 
-app.post("/ticket", (req, res) => {
+app.post("/createTicket", (req, res) => {
     console.log("Server-Side ticket data:", req.body);
 
     const { ticketTitle, ticketDescription, ticketPriority } = req.body;
@@ -61,6 +61,19 @@ app.post("/ticket", (req, res) => {
     }
 });
 
-app.get("/tickets", (req, res) => {
+app.get("/getTickets", (req, res) => {
     res.json(tickets);
+});
+
+app.delete("/deleteTicket/:id", (req, res) => {
+    const ticketID = parseInt(req.params.id);
+
+    const initialLength = tickets.length;
+    tickets = tickets.filter(t => t.id !== ticketID);
+
+    if (tickets.length < initialLength) {
+        res.json({ success: true, message: "Ticket deleted successfully" });
+    } else {
+        res.status(404).json({ success: false, message: "Ticket not found" });
+    }
 });

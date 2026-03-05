@@ -2,7 +2,7 @@ let tickets = [];
 
 async function fetchTickets() {
     try {
-        const response = await fetch("/tickets");
+        const response = await fetch("/getTickets");
         if (response.ok) {
             tickets = await response.json();
             renderTickets(tickets);
@@ -34,13 +34,27 @@ function renderTickets(tickets) {
     `).join("");
 }
 
-document.getElementById("ticket-container").addEventListener("click", (event) => {
+document.getElementById("ticket-container").addEventListener("click", async (event) => {
     // Check if the clicked element is a delete button
     if (event.target.classList.contains("delete-ticket-btn")) {
         const ticketId = parseInt(event.target.getAttribute("data-id"));
 
         // Remove the ticket from the array
         tickets = tickets.filter(t => t.id !== ticketId);
+
+        try {
+            const response = await fetch(`/deleteTicket/${ticketId}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            });
+
+            const result = await response.json();
+            console.log(result.message);
+        } catch (error) {
+            console.error("Error deleting ticket:", error);
+        }
 
         // Re-render the list
         renderTickets(tickets);
