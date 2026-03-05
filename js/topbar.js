@@ -25,6 +25,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
+    const logoutLink = document.getElementById("logout-link");
+    if (logoutLink) {
+        logoutLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            sessionStorage.removeItem("isLoggedIn");
+            window.location.href = "/pages/login-page.html";
+        });
+    }
+
     const userProfile = document.getElementById("dropdown-header");
 
     if (username.length && userEmail.length !== 0) {
@@ -50,7 +59,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p class="main-menu-username">Example</p>
         `;
     }
-
 
 initTicketForm();
 
