@@ -14,7 +14,7 @@ app.use(express.json());
 // HTTP request logging
 app.use(morgan("dev"));
 
-app.use(express.static("./", { index: false }));
+app.use(express.static("./", { index: false }));3
 
 app.get("/", (req, res) => {
     res.sendFile("pages/login-page.html", { root: "./" });
@@ -34,7 +34,7 @@ app.post("/login", (req, res) => {
     } else {
         res.status(401).json({ success: false, message: "Invalid credentials" });
     }
-});
+});1
 
 app.post("/createTicket", (req, res) => {
     console.log("Server-Side ticket data:", req.body);

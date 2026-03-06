@@ -1,9 +1,7 @@
 body {
-    /* Solid background color */
     /*
        135deg creates the diagonal from top-left.
-       #4f46e5 to #7c3aed is an example gradient (Purple/Indigo).
-       The sharp line is created by having two colors meet at the same percentage (25%).
+       The sharp line is created by having two colors meet at the same percentage.
     */
     background: #262526 linear-gradient(
             165deg,
