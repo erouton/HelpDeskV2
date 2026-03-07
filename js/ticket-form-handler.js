@@ -1,3 +1,12 @@
+/**
+ * @file ticket-form-handler.js
+ * @description Manages the support ticket creation modal and form submission.
+ */
+
+/**
+ * Initializes the ticket form functionality.
+ * Sets up event listeners for opening/closing the modal and submitting the form.
+ */
 export function initTicketForm() {
 
     const createTicketBtn = document.getElementById("create-ticket-btn");
@@ -6,31 +15,34 @@ export function initTicketForm() {
     const ticketForm = document.getElementById("ticket-form");
 
     if (createTicketBtn && ticketModal) {
+        // Show modal on 'Create Ticket' button click
         createTicketBtn.addEventListener("click", () => {
             ticketModal.classList.remove("hidden");
         });
 
+        // Hide modal on 'Close' button click
         closeModalBtn.addEventListener("click", () => {
             ticketModal.classList.add("hidden");
         });
 
-        // Close when clicking outside the modal box
-        // ticketModal.addEventListener("click", (event) => {
-        //     if (event.target === ticketModal) {
-        //         ticketModal.classList.add("hidden");
-        //     }
-        // });
-
+        /**
+         * Handle ticket form submission.
+         * Collects form data and sends it to the server.
+         */
         ticketForm.addEventListener("submit", async (event) => {
             event.preventDefault();
 
+            // Extract values from form inputs
             const ticketTitle = document.querySelector("#ticket-title").value;
             const ticketDescription = document.querySelector("#ticket-description").value;
             const ticketPriority = document.querySelector("#ticket-priority").value;
 
+            // Get current user information from session storage
             const userData = JSON.parse(sessionStorage.getItem("userData"));
             const createdBy = userData ? userData.username : "Guest";
+
             try {
+                // Send ticket data to the server
                 const response = await fetch("/createTicket", {
                     method: "POST",
                     headers: {
@@ -43,6 +55,7 @@ export function initTicketForm() {
 
                 if (response.ok) {
                     console.log("Server says:", data.message);
+                    // Dispatch custom event to notify other components that a new ticket was created
                     const ticketEvent = new CustomEvent("ticketCreated", {
                         detail: data.ticket
                     });
@@ -54,6 +67,7 @@ export function initTicketForm() {
                 console.error("Error creating ticket:", error);
             }
 
+            // Hide modal and reset form after submission (success or failure)
             ticketModal.classList.add("hidden");
             ticketForm.reset();
         });

@@ -1,18 +1,31 @@
+/* 
+ * Sidebar Styles
+ * --------------
+ * Defines the look and layout of the left navigation sidebar.
+ */
+
 .sidebar {
     min-width: 110px;
     width: 13vw;
     height: 100vh;
-    background-color: #133e5e;
-    /* 133e5e */
+    background-color: #133e5e; /* Primary brand color */
     padding-top: 10px;
     box-sizing: border-box;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     margin: 0;
-
 }
 
+/* Sidebar Logo Styling */
+.sidebar-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Container for navigation links */
 .sidebar-content {
     gap: 10px;
     flex-grow: 1;
@@ -23,6 +36,7 @@
     margin-top: 10px;
 }
 
+/* Individual navigation link styles */
 .sidebar-content a {
     color: white;
     text-decoration: none;
@@ -32,29 +46,13 @@
     overflow: hidden;
 }
 
+/* Hover effect for links */
 .sidebar-content a:hover {
     background-color: #313131;
     transition: background-color 0.6s ease;
 }
 
-/*
-.sidebar-title h1 {
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: 10px;
-    font-size: clamp(1.3rem, 2vw, 3rem);
-    white-space: nowrap;
-    overflow: hidden;
-}
-*/
-
+/* Push settings link to the bottom of the sidebar */
 #settings-link {
     margin-top: auto;
-}
-
-.sidebar-logo {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
 }

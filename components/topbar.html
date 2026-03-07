@@ -1,16 +1,22 @@
+<!-- Topbar Component: Contains ticket creation button and user profile -->
 <div class="topbar" id="topbar">
+    <!-- Trigger Button for Create Ticket Modal -->
     <button id="create-ticket-btn" class="topbar-button">Create New Ticket</button>
 
+    <!-- Ticket Creation Modal (Hidden by default) -->
     <div id="ticket-modal" class="modal-overlay hidden">
         <div class="modal">
             <h2>Create New Ticket</h2>
             <form id="ticket-form">
+                <!-- Ticket Title Input -->
                 <label for="ticket-title">Title</label>
                 <input type="text" id="ticket-title" placeholder="Enter ticket title" required />
 
+                <!-- Ticket Description Textarea -->
                 <label for="ticket-description">Description</label>
                 <textarea id="ticket-description" placeholder="Describe the issue..." rows="4" required></textarea>
 
+                <!-- Ticket Priority Selection -->
                 <label for="ticket-priority">Priority</label>
                 <select id="ticket-priority">
                     <option value="low">Low</option>
@@ -18,6 +24,7 @@
                     <option value="high">High</option>
                 </select>
 
+                <!-- Modal Form Actions (Submit/Cancel) -->
                 <div class="modal-actions">
                     <button class="form-buttons" type="submit" id="submit-ticket-btn">Submit</button>
                     <button class="form-buttons" type="button" id="close-modal-btn">Cancel</button>
@@ -26,15 +33,18 @@
         </div>
     </div>
 
+    <!-- User Profile Section with Dropdown Menu -->
     <div class="user-profile">
         <img src="/assets/images/pfp.jpg" alt="User Profile" class="profile-pic" id="profile-pic">
         <div class="dropdown-menu" id="user-dropdown">
+            <!-- Dynamic User Information (Populated via topbar.js) -->
             <div class="dropdown-header" id="dropdown-header">
-                <!-- Dynamic username and email -->
             </div>
             <hr>
+            <!-- Logout Link -->
             <a id="logout-link" class="dropdown-item">Logout</a>
         </div>
     </div>
+    <!-- User Name Displayed next to Profile Pic -->
     <p class="main-menu-username" id="main-menu-username"></p>
 </div>

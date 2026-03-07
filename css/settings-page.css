@@ -1,3 +1,10 @@
+/* 
+ * Settings Page Styles
+ * --------------------
+ * Styles for the grid layout and buttons on the settings page.
+ */
+
+/* Grid container for settings items */
 .grid-container {
     box-sizing: border-box;
     padding: 16px;
@@ -10,6 +17,7 @@
     justify-content: center;
 }
 
+/* Individual item box in the settings grid */
 .grid-item {
     background-color: #133e5e;
     display: flex;
@@ -19,6 +27,7 @@
     border-radius: 5px;
 }
 
+/* Theme toggle button styling */
 .theme-toggle-button {
     background-color: #2c70a2;
     border: #17486c;

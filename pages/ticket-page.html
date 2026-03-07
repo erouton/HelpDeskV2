@@ -1,28 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- Basic Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/images/favicon.png">
-    <title>Help Desk</title>
+    <title>Help Desk - Tickets</title>
+
+    <!-- Global and Component Stylesheets -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/topbar.css">
+
+    <!-- Font Awesome for Icons -->
     <script src="https://kit.fontawesome.com/d357d72767.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Main Layout Container -->
+    <div class="app-container">
+        <!-- Sidebar Injection Point -->
+        <div id="sidebar"></div>
 
-<div class="app-container">
-    <div id="sidebar"></div>
-    <div class="main">
-        <div id="topbar"></div>
-        <div class="content">
-            Ticket Page
+        <!-- Main Content Area -->
+        <div class="main">
+            <!-- Topbar Injection Point -->
+            <div id="topbar"></div>
+
+            <!-- Page-Specific Content -->
+            <div class="content">
+                <!-- Placeholder for Ticket Management Content -->
+                Ticket Page Content
+            </div>
         </div>
     </div>
-</div>
 
-<script type="module" src="/js/sidebar.js"></script>
-<script type="module" src="/js/topbar.js"></script>
+    <!-- Frontend logic for components -->
+    <script type="module" src="/js/sidebar.js"></script>
+    <script type="module" src="/js/topbar.js"></script>
 </body>
 </html>

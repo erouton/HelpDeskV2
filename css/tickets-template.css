@@ -1,14 +1,19 @@
+/* 
+ * Ticket Template Styles
+ * ----------------------
+ * Styles for the ticket container and individual ticket cards.
+ */
+
 #ticket-container {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 20px 16px 20px 16px;
+    padding: 20px 16px;
     background-color: #133e5e;
     border-radius: 8px;
-    /*max-height: 300px;*/
-    /*overflow-y: auto;*/
 }
 
+/* Individual Ticket Card Styling */
 .ticket-card {
     display: flex;
     flex-direction: row;
@@ -21,6 +26,7 @@
     border-left: 5px solid #133e5e;
 }
 
+/* Ticket List Title */
 .ticket-title {
     font-size: clamp(1rem, 2vw, 1.7rem);
     font-weight: bold;
@@ -28,10 +34,11 @@
     color: white;
 }
 
+/* Empty State Message Styling */
 .no-tickets {
     color: white;
     font-size: clamp(0.9rem, 2vw, 1.2rem);
-    padding: 20px 16px 20px 16px;
+    padding: 20px 16px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -50,6 +57,7 @@
     color: #555;
 }
 
+/* Action Button for Deleting Tickets */
 .delete-ticket-btn {
     background-color: #ff4444;
     color: white;
@@ -66,6 +74,11 @@
     background-color: #ff3e00;
     transition: background-color 0.3s ease;
 }
+
+/* 
+ * Priority-Based Styling 
+ * Updates border and text colors based on ticket priority levels.
+ */
 
 .ticket-card[data-priority="low"] {
     border-left-color: green;
@@ -91,6 +104,7 @@
     color: red;
 }
 
+/* Custom scrollbar styling for the ticket container */
 #ticket-container::-webkit-scrollbar {
     width: 8px;
 }

@@ -1,8 +1,12 @@
+/* 
+ * User Registration Page Styles
+ * ----------------------------
+ * Specific styles for the registration screen. 
+ * Reuses the layout and background theme from the login page.
+ */
+
 body {
-    /*
-       135deg creates the diagonal from top-left.
-       The sharp line is created by having two colors meet at the same percentage.
-    */
+    /* Background gradient matches the login page for consistency */
     background: #262526 linear-gradient(
             165deg,
             #2c70a2 0%,
@@ -16,6 +20,7 @@ body {
     height: 100vh;
 }
 
+/* Full-screen overlay for the registration modal */
 .register-container {
     position: fixed;
     inset: 0;
@@ -26,6 +31,7 @@ body {
     z-index: 1000;
 }
 
+/* Central Registration Modal Box */
 .register-modal {
     background: #0e2d45;
     padding: 2rem;
@@ -44,6 +50,7 @@ body {
     align-self: center;
 }
 
+/* Registration Form Layout */
 #register-form {
     display: flex;
     flex-direction: column;
@@ -61,6 +68,7 @@ body {
     margin-top: 10px;
 }
 
+/* Reusable form button styles */
 .form-buttons {
     font-size: 1em;
     margin-top: 5px;
@@ -80,6 +88,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
+/* Input Field Styling */
 .register-modal input {
     width: 100%;
     padding: 0.5rem;
@@ -92,6 +101,7 @@ body {
     color: #94a3b8;
 }
 
+/* Focus and Placeholder Effects */
 input:focus {
     outline: none;
     border-color: #94a3b8;

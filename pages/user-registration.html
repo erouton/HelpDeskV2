@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Help Desk - Register</title>
     <link rel="icon" href="/assets/images/favicon.png">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/user-registration.css">
 </head>
 <body>
-<div id="register-container" class="register-container">
-    <div class="register-modal">
-        <h2>Register</h2>
-        <form id="register-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Username" required/>
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Password" required/>
-            <button class="form-buttons" type="submit">Register</button>
-            <p id="error-msg" style="color:red; display:none;">Invalid credentials</p>
-        </form>
+    <!-- Registration Page Container -->
+    <div id="register-container" class="register-container">
+        <!-- Registration Modal Box -->
+        <div class="register-modal">
+            <h2>Register</h2>
+            
+            <!-- User Registration Form -->
+            <form id="register-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Username" required/>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Password" required/>
+                
+                <button class="form-buttons" type="submit">Register</button>
+                
+                <!-- Placeholder for registration error messages (e.g., username taken) -->
+                <p id="error-msg" style="color:red; display:none;">Invalid credentials</p>
+            </form>
+        </div>
     </div>
-</div>
 
-<script src="/js/user-registration.js"></script>
+    <!-- User Registration Logic -->
+    <script src="/js/user-registration.js"></script>
 </body>
+</html>

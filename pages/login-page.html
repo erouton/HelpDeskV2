@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Help Desk - Login</title>
     <link rel="icon" href="/assets/images/favicon.png">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/login-page.css">
 </head>
 <body>
-<div id="login-container" class="login-container">
-    <div class="login-modal">
-        <h2>Login</h2>
-        <form id="login-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Username" required/>
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Password" required/>
-            <p id="error-msg" style="color:red; display:none;">Invalid credentials</p>
-            <button class="form-buttons" type="submit">Login</button>
-        </form>
-        <button class="form-buttons" id="sign-up-button">Sign Up</button>
+    <!-- Login Page Container -->
+    <div id="login-container" class="login-container">
+        <!-- Login Modal Box -->
+        <div class="login-modal">
+            <h2>Login</h2>
+            
+            <!-- Login Credentials Form -->
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Username" required/>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Password" required/>
+                
+                <!-- Placeholder for login error messages -->
+                <p id="error-msg" style="color:red; display:none;">Invalid credentials</p>
+                
+                <button class="form-buttons" type="submit">Login</button>
+            </form>
+            
+            <!-- Link to Sign Up Page -->
+            <button class="form-buttons" id="sign-up-button">Sign Up</button>
+        </div>
     </div>
-</div>
 
-<script src="/js/login-page.js"></script>
+    <!-- Login Authentication Logic -->
+    <script src="/js/login-page.js"></script>
 </body>
+</html>

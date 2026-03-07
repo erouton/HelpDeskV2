@@ -1,23 +1,33 @@
+/* 
+ * Global Stylesheet
+ * -----------------
+ * Contains base styles, layout containers, and shared typography.
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap');
 
+/* Base page styles */
 body {
     margin: 0;
     background-color: #e9f0f3;
     font-family: "Inclusive Sans", sans-serif;
 }
 
+/* Main app layout container */
 .app-container {
     min-height: 100vh;
     display: flex;
     margin: 0;
 }
 
+/* Main content area (beside the sidebar) */
 .main {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
+/* Inner content padding */
 .content {
     box-sizing: border-box;
     padding: 16px;
