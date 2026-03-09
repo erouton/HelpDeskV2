@@ -105,5 +105,5 @@ document.addEventListener("DOMContentLoaded", () => {
 // Initial render
 renderTickets(tickets);
 
-// Set up polling to keep tickets synchronized with the server every 5 seconds
-setInterval(fetchTickets, 5000);
+// Set up polling to keep tickets synchronized with the server every 2 seconds
+setInterval(fetchTickets, 2000);

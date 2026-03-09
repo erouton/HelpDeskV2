@@ -14,13 +14,13 @@ const PORT = 8000;
 // Initialize databases
 // tickets.db stores support ticket information
 // users.db stores user credentials and roles
-const db = new Database("tickets.db");
+const ticketsDB = new Database("tickets.db");
 const userDB = new Database("users.db");
 
 /**
  * Initialize the 'tickets' table if it doesn't exist.
  */
-db.exec(`
+ticketsDB.exec(`
     CREATE TABLE IF NOT EXISTS tickets (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT NOT NULL,
@@ -146,7 +146,7 @@ app.post("/createTicket", (req, res) => {
 
     if (ticketTitle && ticketDescription && ticketPriority) {
         try {
-            const insertTicket = db.prepare(`
+            const insertTicket = ticketsDB.prepare(`
                 INSERT INTO tickets (title, description, priority, status, createdBy)
                 VALUES (?, ?, ?, ?, ?)
             `);
@@ -178,7 +178,7 @@ app.post("/createTicket", (req, res) => {
  */
 app.get("/getTickets", (req, res) => {
     try {
-        const tickets = db.prepare("SELECT * FROM tickets").all();
+        const tickets = ticketsDB.prepare("SELECT * FROM tickets").all();
         res.json(tickets);
     } catch (error) {
         console.error("Error fetching tickets:", error);
@@ -195,7 +195,7 @@ app.delete("/deleteTicket/:id", (req, res) => {
     const ticketID = parseInt(req.params.id);
 
     try {
-        const result = db.prepare("DELETE FROM tickets WHERE id = ?").run(ticketID);
+        const result = ticketsDB.prepare("DELETE FROM tickets WHERE id = ?").run(ticketID);
 
         if (result.changes > 0) {
             res.json({ success: true, message: "Ticket deleted from database successfully" });
