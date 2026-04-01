@@ -27,17 +27,26 @@
             <!-- Topbar Injection Point -->
             <div id="topbar"></div>
 
+            <!-- Settings Options Container -->
             <div class="settings-container">
+
+                <!-- Settings header -->
                 <div class="settings-header">
                     <h1>Settings</h1>
                     <p>Manage your preferences</p>
                 </div>
+
+                <!-- Profile Settings Section -->
                 <div class="settings-section">
                     <div class="section-title">
-                        <i class="fa-solid fa-palette"></i>
+                        <i class="fa-solid fa-user"></i>
                         <h2>Profile</h2>
                     </div>
+
+                    <!-- Adjustable Profile Settings -->
                     <div class="settings-card">
+
+                        <!-- Settings to Change First Name -->
                         <div class="settings-row">
                             <div class="settings-info">
                                 <span class="settings-label">First Name</span>
@@ -45,6 +54,8 @@
                             </div>
                             <input type="text" id="firstname-input" class="settings-input" placeholder="Enter First Name">
                         </div>
+
+                        <!-- Settings to Change Last Name -->
                         <div class="settings-row">
                             <div class="settings-info">
                                 <span class="settings-label">Last Name</span>
@@ -54,12 +65,18 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Account Information Settings Section -->
                 <div class="settings-section">
                     <div class="section-title">
-                        <i class="fa-solid fa-palette"></i>
-                        <h2>Account</h2>
+                        <i class="fa-solid fa-address-card"></i>
+                        <h2>Account Information</h2>
                     </div>
+
+                    <!-- Adjustable Account Information Settings -->
                     <div class="settings-card">
+
+                        <!-- Change Current Password -->
                         <div class="settings-row">
                             <div class="settings-info">
                                 <span class="settings-label">Current Password</span>
@@ -67,28 +84,47 @@
                             </div>
                             <input type="password" id="current-password" class="settings-input" placeholder="Enter Password">
                         </div>
+
+                        <!-- Change Username -->
                         <div class="settings-row">
                             <div class="settings-info">
                                 <span class="settings-label">Username</span>
-                                <span class="settings-desc">Your display name across the app</span>
+                                <span class="settings-desc">Your account login for the app</span>
                             </div>
                             <input type="text" id="username-input" class="settings-input" placeholder="Enter Username">
                         </div>
+
+                        <!-- Change Contact Email -->
                         <div class="settings-row">
                             <div class="settings-info">
-                                <span class="settings-label">Email</span>
+                                <span class="settings-label">Email Address</span>
                                 <span class="settings-desc">Your contact email address</span>
                             </div>
                             <input type="text" id="email-input" class="settings-input" placeholder="Enter Email">
                         </div>
+
+                        <!-- Change Contact Phone Number-->
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">Phone Number</span>
+                                <span class="settings-desc">Your contact phone number</span>
+                            </div>
+                            <input type="text" id="phoneNumber-input" class="settings-input" placeholder="Enter Phone Number">
+                        </div>
                     </div>
                 </div>
+
+                <!-- Notifications Settings Section -->
                 <div class="settings-section">
                     <div class="section-title">
-                        <i class="fa-solid fa-palette"></i>
+                        <i class="fa-solid fa-alarm-clock"></i>
                         <h2>Notifications</h2>
                     </div>
+
+                    <!-- Adjustable Notifications Settings -->
                     <div class="settings-card">
+
+                        <!-- Toggle Ticket Notification Settings -->
                         <div class="settings-row">
                             <div class="settings-info">
                                 <span class="settings-label">Ticket Updates</span>
@@ -99,6 +135,8 @@
                                 <span class="toggle-slider"></span>
                             </label>
                         </div>
+
+                        <!-- Toggle New Assingment Notifications -->
                         <div class="settings-row">
                             <div class="settings-info">
                                 <span class="settings-label">New Assignments</span>
@@ -109,6 +147,8 @@
                                 <span class="toggle-slider"></span>
                             </label>
                         </div>
+
+                        <!-- Toggle System Announcement Notifications -->
                         <div class="settings-row">
                             <div class="settings-info">
                                 <span class="settings-label">System Announcements</span>
@@ -121,12 +161,18 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Appearance Settings Section -->
                 <div class="settings-section">
                     <div class="section-title">
                         <i class="fa-solid fa-palette"></i>
                         <h2>Appearance</h2>
                     </div>
+
+                    <!-- Adjustable Appearance Settings -->
                     <div class="settings-card">
+
+                        <!-- Toggle Dark Mode -->
                         <div class="settings-row">
                             <div class="settings-info">
                                 <span class="settings-label">Dark Mode</span>
@@ -139,6 +185,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Save Changes Button -->
                 <div class="settings-footer">  
                     <span id="save-status" class="save-status"></span>
                     <button id="save-settings-btn" class="save-btn">
