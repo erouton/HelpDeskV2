@@ -27,35 +27,123 @@
             <!-- Topbar Injection Point -->
             <div id="topbar"></div>
 
-            <!-- Settings Grid Layout -->
-            <div class="grid-container">
-                <!-- Grid items containing various settings options -->
-                <div class="grid-item">
-                    <button class="theme-toggle-button">Theme</button>
+            <div class="settings-container">
+                <div class="settings-header">
+                    <h1>Settings</h1>
+                    <p>Manage your preferences</p>
                 </div>
-                <div class="grid-item">
-                    <button class="theme-toggle-button">Theme</button>
+                <div class="settings-section">
+                    <div class="section-title">
+                        <i class="fa-solid fa-palette"></i>
+                        <h2>Profile</h2>
+                    </div>
+                    <div class="settings-card">
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">First Name</span>
+                                <span class="settings-desc">Your first name</span>
+                            </div>
+                            <input type="text" id="firstname-input" class="settings-input" placeholder="Enter First Name">
+                        </div>
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">Last Name</span>
+                                <span class="settings-desc">Your last name</span>
+                            </div>
+                            <input type="text" id="lastname-input" class="settings-input" placeholder="Enter Last Name">
+                        </div>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <button class="theme-toggle-button">Theme</button>
+                <div class="settings-section">
+                    <div class="section-title">
+                        <i class="fa-solid fa-palette"></i>
+                        <h2>Account</h2>
+                    </div>
+                    <div class="settings-card">
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">Current Password</span>
+                                <span class="settings-desc">Enter your current password to make changes</span>
+                            </div>
+                            <input type="password" id="current-password" class="settings-input" placeholder="Enter Password">
+                        </div>
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">Username</span>
+                                <span class="settings-desc">Your display name across the app</span>
+                            </div>
+                            <input type="text" id="username-input" class="settings-input" placeholder="Enter Username">
+                        </div>
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">Email</span>
+                                <span class="settings-desc">Your contact email address</span>
+                            </div>
+                            <input type="text" id="email-input" class="settings-input" placeholder="Enter Email">
+                        </div>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <button class="theme-toggle-button">Theme</button>
+                <div class="settings-section">
+                    <div class="section-title">
+                        <i class="fa-solid fa-palette"></i>
+                        <h2>Notifications</h2>
+                    </div>
+                    <div class="settings-card">
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">Ticket Updates</span>
+                                <span class="settings-desc">Get notified when a ticket is updated</span>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="tickets-notif-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">New Assignments</span>
+                                <span class="settings-desc">Get notified when a ticket is assigned to you</span>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="assignments-notif-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">System Announcements</span>
+                                <span class="settings-desc">Receive important system-wide Announcements</span>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="system-notif-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <button class="theme-toggle-button">Theme</button>
+                <div class="settings-section">
+                    <div class="section-title">
+                        <i class="fa-solid fa-palette"></i>
+                        <h2>Appearance</h2>
+                    </div>
+                    <div class="settings-card">
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span class="settings-label">Dark Mode</span>
+                                <span class="settings-desc">Switch between light and dark theme</span>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="dark-mode-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <button class="theme-toggle-button">Theme</button>
-                </div>
-                <div class="grid-item">
-                    <button class="theme-toggle-button">Theme</button>
-                </div>
-                <div class="grid-item">
-                    <button class="theme-toggle-button">Theme</button>
-                </div>
-                <div class="grid-item">
-                    <button class="theme-toggle-button">Theme</button>
+                <div class="settings-footer">  
+                    <span id="save-status" class="save-status"></span>
+                    <button id="save-settings-btn" class="save-btn">
+                        <i class="fa-solid fa-floppy-disk"></i>Save Changes
+                    </button>
                 </div>
             </div>
         </div>
@@ -64,5 +152,38 @@
     <!-- Frontend logic for components -->
     <script type="module" src="/js/sidebar.js"></script>
     <script type="module" src="/js/topbar.js"></script>
+    <script type="module" src="/js/settings-page.js"></script>
 </body>
 </html>
+
+<!-- Settings Grid Layout
+            <div class="grid-container">
+                Grid items containing various settings options
+                <div class="grid-item">
+                    <button class="theme-toggle-button">Profile</button>
+                </div>
+                <div class="grid-item">
+                    <button class="theme-toggle-button">Account</button>
+                </div>
+                <div class="grid-item">
+                    <button class="theme-toggle-button">Notification</button>
+                </div>
+                <div class="grid-item">
+                    <button class="theme-toggle-button">Theme</button>
+                </div>
+                <div class="grid-item">
+                    <button class="theme-toggle-button">Theme</button>
+                </div>
+                <div class="grid-item">
+                    <button class="theme-toggle-button">Theme</button>
+                </div>
+                <div class="grid-item">
+                    <button class="theme-toggle-button">Theme</button>
+                </div>
+                <div class="grid-item">
+                    <button class="theme-toggle-button">Theme</button>
+                </div>
+                <div class="grid-item">
+                    <button class="theme-toggle-button">Theme</button>
+                </div>
+            </div> -->
