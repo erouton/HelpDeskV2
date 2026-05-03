@@ -28,6 +28,34 @@ export async function loadComponent(componentSelector, componentPath) {
     }
 }
 
+import { supabase } from "/js/supabase.js";
+
+async function applyRoleView() {
+
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+        window.location.href = "/pages/login-page.html";
+        return;
+    }
+
+    const { data: profile, error } = await supabase
+        .from("users")
+        .select("role")
+        .eq("id", session.user.id)
+        .single();
+    
+    if (error || !profile) {
+        window.location.href = "/pages/login-page.html";
+        return;
+    }
+
+    document.body.classList.add(`role-${profile.role}`);
+}
+
+applyRoleView();
+
+
 /**
  * IIFE for Authentication Guard:
  * Redirects the user to the login page if they are not logged in.
